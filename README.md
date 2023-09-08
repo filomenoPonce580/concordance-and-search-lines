@@ -8,7 +8,7 @@ The following data structures are used in this challenge
 
 The body of the text is given as an array of strings where each string represents a single line of text. You may use the index of the string in the array as the line number. The file src/data.js contains an example of one such body of text.
 
-''' js
+``` js
 const data = [  
   "All human beings are born free and equal in dignity and rights.",  
   "They are endowed with reason and conscience and should act towards one another in a spirit of brotherhood.",  
@@ -16,7 +16,7 @@ const data = [
   "Furthermore, no distinction shall be made on the basis of the political, jurisdictional or international status of the country or territory to which a person belongs, whether it be independent, trust, non-self-governing or under any other limitation of sovereignty.",  
   ...  
   ]
-'''
+```
 As you can see from this snippet the word "human" appears on line 0 and the word "distinction" appears on lines 2 and 3.
 
 A concordance generated from this text may look like this:
