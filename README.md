@@ -3,8 +3,8 @@ A concordance is a list of words present in a text along with the paragraph or l
 
 Given a body of text broken up into specific lines, can you create a concordance for the text?
 
-Tasks
-The following data structures are used in this challenge
+## Tasks
+The following data structures are used in this challenge. 
 
 The body of the text is given as an array of strings where each string represents a single line of text. You may use the index of the string in the array as the line number. The file src/data.js contains an example of one such body of text.
 
@@ -20,7 +20,7 @@ const data = [
 As you can see from this snippet the word "human" appears on line 0 and the word "distinction" appears on lines 2 and 3.
 
 A concordance generated from this text may look like this:
-
+``` js
 {  
         all: [  
            0,  2,  5,  8, 9,
@@ -49,7 +49,8 @@ A concordance generated from this text may look like this:
         ],
    ...
 }
-concordance()
+```
+### concordance()
 Write a function named concordance that accepts an array of strings representing a body of text and returns a concordance of that text. Note the following:
 
 do not include duplicate line numbers for words appearing more than once on a single line.
@@ -58,12 +59,12 @@ hyphenated words are considered a single word. For example "non-self-governing" 
 the concordance does not have to be sorted.
 You may find that you need to break up a long piece of text into individual words. Using the .split() method of the String object is useful for this purpose. The .split() method accepts a regular expression that makes it possible to describe complex rules for word endings. Here is one such expression that you may use:
 
-/[\s.,';]/
+`/[\s.,';]/`
 For example, the following snippet of code:
 
-"Everyone has the right to life, liberty and security of person.".split(/[\s.,';]/)
-splits the given text into individual words by spaces, full stops, commas, single quotes and semi-colons. The result is an array:
-
+"Everyone has the right to life, liberty and security of person.".split(/[\s.,';]/)  
+splits the given text into individual words by spaces, full stops, commas, single quotes and semi-colons. The result is an array:  
+```js
 [
   'Everyone', 'has',
   'the',      'right',
@@ -73,11 +74,13 @@ splits the given text into individual words by spaces, full stops, commas, singl
   'of',       'person',
   ''
 ]
+```
+
 Notice that there are some empty strings in that result. Those are not valid words and should not appear in the final output.
 
 Write the solution to this problem in the file named src/concordance.js.
 
-searchLines()
+### searchLines()
 Write a function named searchLines() that accepts:
 
 words: a linked list of words
@@ -87,17 +90,20 @@ Generate an array of strings representing the lines of text in which any of the 
 
 For example, given the following concordance:
 
+```js
 {
     exile: [ 11 ],
     full: [ 12, 23, 25, 49, 55 ],
     equality: [ 12 ],
     fair: [ 12 ]
 }
+```
 and the words "exile", "equality" and "fair" and text given in the src/data.js file, construct the resulting array as follows:
 
 The word "exile" occurs on line 11 and both words "equality" and "fair" appear on line 12 so return the lines 11 and 12. The result will be:
-
+```js
 [
   "No one shall be subjected to arbitrary arrest, detention or exile.",
   "Everyone is entitled in full equality to a fair and public hearing by an independent and impartial tribunal, in the determination of his rights and obligations and of any criminal charge against him."
 ]
+```
